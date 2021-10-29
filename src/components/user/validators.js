@@ -7,7 +7,7 @@ const schema = {
     description: { type: 'string' },
     industry: { type: 'string' },
     service: { type: 'string' },
-    company_size: { type: 'number' },
+    company_size: { type: 'string' },
     has_technology: { type: 'boolean' },
     current_technology: { type: 'string' },
     name: { type: 'string' },

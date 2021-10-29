@@ -27,7 +27,7 @@ var schema = {
       type: 'string'
     },
     company_size: {
-      type: 'number'
+      type: 'string'
     },
     has_technology: {
       type: 'boolean'
