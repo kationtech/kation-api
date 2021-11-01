@@ -10,7 +10,7 @@ export const recipientTemplate = (user) => {
     to: emailAddress,
     from: process.env.NO_REPLY_EMAIL,
     subject: 'Confirmed Partnering with Kation Technologies',
-    templateId: 'd-efea585a776d4c7ba17aca1d3193662f',
+    templateId: process.env.WELCOME_USER_TEMPLATE_ID,
     dynamic_template_data: { 
       emailAddress, 
       contactNumber
@@ -35,13 +35,13 @@ export const senderTemplate = (sender) => {
   return {
     to: process.env.SENDER_EMAIL,
     from: process.env.NO_REPLY_EMAIL,
-    subject: 'Confirmed Partnering with Kation Technologies 2',
-    templateId: 'd-efea585a776d4c7ba17aca1d3193662f',
+    subject: 'Confirmed Partnering with Kation Technologies',
+    templateId: process.env.NEW_USER_TEMPLATE_ID,
     dynamic_template_data: { 
       emailAddress,
       contactNumber,
       companySize,
-      hasTechnology,
+      hasTechnology: hasTechnology ? 'Yes':'No',
       currentTechnology,
       industry,
       service,
