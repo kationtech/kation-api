@@ -14,7 +14,7 @@ var recipientTemplate = function recipientTemplate(user) {
     to: emailAddress,
     from: process.env.NO_REPLY_EMAIL,
     subject: 'Confirmed Partnering with Kation Technologies',
-    templateId: 'd-efea585a776d4c7ba17aca1d3193662f',
+    templateId: process.env.WELCOME_USER_TEMPLATE_ID,
     dynamic_template_data: {
       emailAddress: emailAddress,
       contactNumber: contactNumber
@@ -35,21 +35,29 @@ var senderTemplate = function senderTemplate(sender) {
       name = sender.name,
       type = sender.type,
       description = sender.description;
+  var checkTechnology = null;
+
+  if (hasTechnology === true) {
+    checkTechnology = 'YES';
+  } else if (hasTechnology === false) {
+    checkTechnology = 'NO';
+  }
+
   return {
     to: process.env.SENDER_EMAIL,
     from: process.env.NO_REPLY_EMAIL,
-    subject: 'Confirmed Partnering with Kation Technologies 2',
-    templateId: 'd-efea585a776d4c7ba17aca1d3193662f',
+    subject: 'Confirmed Partnering with Kation Technologies',
+    templateId: process.env.NEW_USER_TEMPLATE_ID,
     dynamic_template_data: {
       emailAddress: emailAddress,
       contactNumber: contactNumber,
       companySize: companySize,
-      hasTechnology: hasTechnology,
+      hasTechnology: checkTechnology,
       currentTechnology: currentTechnology,
       industry: industry,
       service: service,
       name: name,
-      type: type,
+      type: type.toUpperCase(),
       description: description
     }
   };

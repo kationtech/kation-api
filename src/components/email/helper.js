@@ -32,6 +32,12 @@ export const senderTemplate = (sender) => {
     description,
   } = sender;
 
+  let checkTechnology = null;
+  if(hasTechnology === true) {
+    checkTechnology = 'YES';
+  } else if (hasTechnology === false) {
+    checkTechnology = 'NO';
+  }
   return {
     to: process.env.SENDER_EMAIL,
     from: process.env.NO_REPLY_EMAIL,
@@ -41,12 +47,12 @@ export const senderTemplate = (sender) => {
       emailAddress,
       contactNumber,
       companySize,
-      hasTechnology: hasTechnology ? 'Yes':'No',
+      hasTechnology: checkTechnology,
       currentTechnology,
       industry,
       service,
       name,
-      type,
+      type: type.toUpperCase(),
       description,
     },
   };

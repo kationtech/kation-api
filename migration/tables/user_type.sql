@@ -3,6 +3,6 @@ create table user_type (
    created_at TIMESTAMP NOT NULL DEFAULT now(),
    updated_at TIMESTAMP NOT NULL DEFAULT now(),
    type VARCHAR(100) NOT NULL,
-   description VARCHAR(2000) NOT NULL,
+   description VARCHAR(2000),
    PRIMARY KEY ( id )
 );

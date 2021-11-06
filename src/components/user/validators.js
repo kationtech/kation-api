@@ -16,16 +16,10 @@ const schema = {
     subscription: { type: 'boolean' },
   },
   required: [
-    'type',
-    'description',
-    'industry',
-    'service',
-    'company_size',
-    'has_technology',
     'name',
     'email',
     'contact_number',
-    'subscription',
+    'type'
   ],
 };
 

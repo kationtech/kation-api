@@ -48,7 +48,7 @@ var schema = {
       type: 'boolean'
     }
   },
-  required: ['type', 'description', 'industry', 'service', 'company_size', 'has_technology', 'name', 'email', 'contact_number', 'subscription']
+  required: ['name', 'email', 'contact_number', 'type']
 };
 var ajv = new _ajv["default"]();
 var compileSchema = ajv.compile(schema);

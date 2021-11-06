@@ -90,7 +90,10 @@ exports.registerUser = /*#__PURE__*/function () {
             })));
 
           case 7:
-            res.status(200).send('Success');
+            res.status(201).json({
+              message: "Successfully Registered",
+              status: 201
+            });
             _context2.next = 14;
             break;
 
@@ -98,7 +101,10 @@ exports.registerUser = /*#__PURE__*/function () {
             _context2.prev = 10;
             _context2.t0 = _context2["catch"](0);
             console.log('ERROR', _context2.t0);
-            res.status(400).send(_context2.t0.message);
+            res.status(400).json({
+              message: _context2.t0.message,
+              status: 400
+            });
 
           case 14:
           case "end":
